@@ -17,6 +17,10 @@ Plug('neanias/everforest-nvim', { branch = 'main' })
 
 Plug('windwp/nvim-autopairs')
 
+Plug('nvim-lualine/lualine.nvim')
+-- If you want to have icons in your statusline choose one of these
+Plug('nvim-tree/nvim-web-devicons')
+
 vim.call('plug#end')
 
 -- options
@@ -51,6 +55,13 @@ everforest.setup({
 })
 everforest.load()
 
+-- lualine
+require('lualine').setup({
+  options = {
+    theme = "auto"
+  }
+})
+
 -- autopairs
 require('nvim-autopairs').setup {}
 
@@ -60,6 +71,7 @@ vim.g.coc_global_extensions = {
   'coc-tsserver',
   'coc-css',
   'coc-eslint',
+  'coc-prettier',
   'coc-sumneko-lua',
 }
 require('coc')

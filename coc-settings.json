@@ -1,5 +1,9 @@
 {
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.hint.paramName": "Disable",
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSave": true,
+  "[lua]": {
+    "coc.preferences.formatOnSave": false
+  }
 }
