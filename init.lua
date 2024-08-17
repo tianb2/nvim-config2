@@ -51,10 +51,15 @@ everforest.setup({
 })
 everforest.load()
 
+-- autopairs
+require('nvim-autopairs').setup {}
+
 -- coc
 vim.g.coc_global_extensions = {
   'coc-json',
   'coc-tsserver',
+  'coc-css',
+  'coc-eslint',
   'coc-sumneko-lua',
 }
 require('coc')
