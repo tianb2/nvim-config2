@@ -73,5 +73,6 @@ vim.g.coc_global_extensions = {
   'coc-eslint',
   'coc-prettier',
   'coc-sumneko-lua',
+  'coc-rust-analyzer'
 }
 require('coc')
