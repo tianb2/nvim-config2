@@ -18,8 +18,18 @@ Plug('neanias/everforest-nvim', { branch = 'main' })
 Plug('windwp/nvim-autopairs')
 
 Plug('nvim-lualine/lualine.nvim')
--- If you want to have icons in your statusline choose one of these
 Plug('nvim-tree/nvim-web-devicons')
+
+-- fuzzy search
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope-fzf-native.nvim', {
+  ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release'
+})
+Plug('nvim-telescope/telescope.nvim', { tag = '0.1.8' })
+
+Plug('iamcco/markdown-preview.nvim', {
+  ['do'] = 'cd app && npx --yes yarn install' }
+)
 
 vim.call('plug#end')
 
@@ -63,7 +73,9 @@ require('lualine').setup({
 })
 
 -- autopairs
-require('nvim-autopairs').setup {}
+require('nvim-autopairs').setup {
+  map_cr = false
+}
 
 -- coc
 vim.g.coc_global_extensions = {
@@ -75,4 +87,9 @@ vim.g.coc_global_extensions = {
   'coc-sumneko-lua',
   'coc-rust-analyzer'
 }
-require('coc')
+require('coc_defaults')
+
+-- telescope
+vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<C-g>', require('telescope.builtin').live_grep)
+vim.keymap.set('n', '<C-f>', require('telescope.builtin').buffers)

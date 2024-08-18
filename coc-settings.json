@@ -1,10 +1,11 @@
 {
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.hint.paramName": "Disable",
+  "Lua.completion.callSnippet": "Replace",
   "eslint.autoFixOnSave": true,
-  "coc.preferences.formatOnSave": true,
-  "[lua]": {
-    "coc.preferences.formatOnSave": false
+  "coc.preferences.formatOnSave": false,
+  "[typescript][typescriptreact][javascript][javascriptreact]": {
+    "coc.preferences.formatOnSave": true
   },
   "workspace.ignoredFolders": ["$HOME", "$HOME/.cargo/**", "$HOME/.rustup/**"]
 }
