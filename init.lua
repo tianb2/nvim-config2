@@ -34,6 +34,8 @@ Plug('iamcco/markdown-preview.nvim', {
 -- treesitter for syntax highlighting
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
+Plug('voldikss/vim-floaterm')
+
 vim.call('plug#end')
 
 -- options
@@ -121,3 +123,7 @@ require 'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+-- floaterm
+vim.keymap.set('n', '<C-t>', ':FloatermToggle<CR>')
+vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:FloatermToggle<CR>', {noremap = true, silent = true})
