@@ -88,13 +88,23 @@ vim.g.coc_global_extensions = {
   'coc-json',
   'coc-tsserver',
   'coc-css',
+  'coc-html',
   'coc-eslint',
   'coc-prettier',
   'coc-sumneko-lua',
   'coc-rust-analyzer',
   'coc-clangd',
+  'coc-solargraph',
 }
 require('coc_defaults')
+-- consider words with dashes when doing completion
+-- with the buffer source
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function()
+    vim.b.coc_additional_keywords = { '-' }
+  end
+})
 
 -- telescope
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files)
@@ -111,7 +121,9 @@ require 'nvim-treesitter.configs'.setup {
     "markdown",
     "rust",
     "cpp",
-    "javascript", "typescript"
+    "javascript", "typescript",
+    "json",
+    "ruby",
   },
   sync_install = false,
   auto_install = true,
