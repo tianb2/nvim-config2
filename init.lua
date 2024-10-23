@@ -95,6 +95,7 @@ vim.g.coc_global_extensions = {
   'coc-rust-analyzer',
   'coc-clangd',
   'coc-solargraph',
+  'coc-pyright',
 }
 require('coc_defaults')
 -- consider words with dashes when doing completion
@@ -124,6 +125,7 @@ require 'nvim-treesitter.configs'.setup {
     "javascript", "typescript",
     "json",
     "ruby",
+    "python",
   },
   sync_install = false,
   auto_install = true,
