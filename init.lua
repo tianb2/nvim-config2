@@ -47,6 +47,7 @@ vim.opt.shiftwidth = 2
 vim.opt.signcolumn = "yes"   -- always show the signcolumn to prevent shifting
 vim.opt.smartindent = true
 vim.opt.termguicolors = true -- true color
+vim.opt.cinoptions = "l1" -- fix some indentation in c++ https://stackoverflow.com/a/3445040
 
 -- keymaps
 vim.g.mapleader = ","
