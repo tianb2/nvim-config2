@@ -97,6 +97,7 @@ vim.g.coc_global_extensions = {
   'coc-clangd',
   'coc-solargraph',
   'coc-pyright',
+  '@yaegassy/coc-volar'
 }
 require('coc_defaults')
 -- consider words with dashes when doing completion
@@ -143,3 +144,15 @@ require 'nvim-treesitter.configs'.setup {
 -- floaterm
 vim.keymap.set('n', '<C-t>', ':FloatermToggle<CR>')
 vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:FloatermToggle<CR>', { noremap = true, silent = true })
+
+-- vue workspace root
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "vue",
+  callback = function()
+    vim.b.coc_root_patterns = {
+      ".git", ".env", "package.json", "tsconfig.json", "jsconfig.json",
+      "vite.config.ts", "vite.config.js", "vue.config.js", "nuxt.config.ts"
+    }
+  end,
+})
+

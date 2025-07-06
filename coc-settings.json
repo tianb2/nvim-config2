@@ -4,8 +4,12 @@
   "Lua.completion.callSnippet": "Replace",
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSave": false,
-  "[typescript][typescriptreact][javascript][javascriptreact]": {
+  "[typescript][typescriptreact][javascript][javascriptreact][vue]": {
     "coc.preferences.formatOnSave": true
   },
-  "workspace.ignoredFolders": ["$HOME", "$HOME/.cargo/**", "$HOME/.rustup/**"]
+  "workspace.ignoredFolders": ["$HOME", "$HOME/.cargo/**", "$HOME/.rustup/**"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "volar.enable": true
 }
