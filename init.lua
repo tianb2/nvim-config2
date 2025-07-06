@@ -156,3 +156,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- utils
+-- insert iso date string
+vim.keymap.set("n", "<leader>dt", function()
+  local ts = os.date("!%Y-%m-%dT%H:%M:%S.")
+  local ms = math.floor(vim.loop.hrtime() / 1e6) % 1000
+  local full = ts .. string.format("%03dZ", ms)
+  vim.api.nvim_put({ full }, "c", true, true)
+end)
